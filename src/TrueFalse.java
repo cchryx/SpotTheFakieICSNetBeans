@@ -9,10 +9,21 @@
  */
 public class TrueFalse extends Question {
     private boolean answer;
-    public TrueFalse(String name, boolean answer){
-        super(name);
+    private String[] choices = new String[4];
+    
+    public TrueFalse(
+            String question, 
+            String id, 
+            boolean answer, 
+            String[] choices, 
+            int eloGain, 
+            int eloLose
+    ){
+        super(question, id, eloGain, eloLose);
         this.answer = answer;
     }
     
-    
+    public boolean checkAnswer(boolean choice) {
+        return answer == choice;
+    }
 }

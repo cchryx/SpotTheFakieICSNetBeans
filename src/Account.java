@@ -3,51 +3,72 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+import java.util.ArrayList;
+
 /**
  *
- * @author Stikb
+ * @author Chris
  */
 public class Account {
+    private String username;
+    private String password;
+    private ArrayList<Question> questionsAnswered;
+    private int questionsCorrect;
+    private int questionsWrong;
+    private int elo;
     
-    private String name;
-    private boolean dailyQuestionUsed;
-    private static int score = 0;
-    private int ranking;
-    
-    public Account(String name){
-        this.name = name;
-        this.dailyQuestionUsed = false;
-        this.ranking = 0;
+    public Account(String username, String password){
+        this.username = username;
+        this.password = password;
+        elo = 0;
     }
     
-    public Account(String name, int ranking){
-        this.name = name;
-        this.dailyQuestionUsed = false;
-        this.ranking = ranking;
+    public Account(
+            String username, 
+            String password, 
+            ArrayList<Question> questionsAnswered,
+            int questionsCorrect,
+            int questionsWrong,
+            int elo
+    ){
+        this.username = username;
+        this.password = password;
+        this.questionsAnswered = questionsAnswered;
+        this.questionsCorrect = questionsCorrect;
+        this.questionsWrong = questionsWrong;
+        this.elo = elo;
     }
     
-    public void setRanking(int ranking){
-        this.ranking = ranking;
+    public void addElo(int points){
+        elo += points;
     }
     
-    public void useDaily(){
-        dailyQuestionUsed = true;
+    public void removeElo(int points){
+        if((elo - points) < 0) {
+            elo = 0;
+        } else {
+            elo += points;
+        }
+    }
+    public String getUsername(){
+        return username;
     }
     
-    public String getName(){
-        return name;
-    }
-    public int getRanking(){
-        return ranking;
+    public String getPassword(){
+        return password;
     }
     
-    public void addScore(){
-        score++;
+    public int getQuestionsCorrect(){
+        return questionsCorrect;
+    }
+    
+    public int getQuestionsWrong(){
+        return questionsWrong;
     }
     
     @Override
     public String toString(){
-        return "User: " + name + " Score: " + score + " Ranking: " + ranking;
+        return "Username: " + username + "; ELO: " + elo;
     }
 
 }

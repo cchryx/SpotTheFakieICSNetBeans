@@ -5,7 +5,7 @@
 
 /**
  *
- * @author Stikb
+ * @author Chris
  */
 
 public class Question {
@@ -23,5 +23,9 @@ public class Question {
     
     public String getQuestion(){
         return question;
+    }  
+    
+    public String getId(){
+        return id;
     }  
 }

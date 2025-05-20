@@ -5,7 +5,7 @@
 
 /**
  *
- * @author Stikb
+ * @author Chris
  */
 public class MultipleChoice extends Question {
     private int answer;
