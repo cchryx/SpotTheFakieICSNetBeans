@@ -9,14 +9,19 @@
  */
 
 public class Question {
-    private String questionText;
+    private String question;
+    private String id;
+    private int eloGain;
+    private int eloLose;
     
-    public Question(String questionText){
-        this.questionText = questionText;
+    public Question(String question, String id, int eloGain, int eloLose){
+        this.question = question;
+        this.id = id;
+        this.eloGain = eloGain;
+        this.eloLose = eloLose;
     }
     
-    public String askQuestion(){
-        return questionText;
-    }
-           
+    public String getQuestion(){
+        return question;
+    }  
 }

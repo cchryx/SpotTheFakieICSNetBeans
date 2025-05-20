@@ -9,11 +9,22 @@
  */
 public class MultipleChoice extends Question {
     private int answer;
-    public MultipleChoice(String name, int answer){
-        super(name);
+    private String[] choices = new String[4];
+    
+    public MultipleChoice(
+            String question, 
+            String id, 
+            int answer, 
+            String[] choices, 
+            int eloGain, 
+            int eloLose
+    ){
+        super(question, id, eloGain, eloLose);
         this.answer = answer;
+        this.choices = choices;
     }
     
-    
-    
+    public boolean checkAnswer(int choice) {
+        return answer == choice;
+    }
 }
