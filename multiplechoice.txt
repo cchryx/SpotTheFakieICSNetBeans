@@ -1,1 +1,10 @@
-question;1;tip;choice1;choice2;choice3;choice4
+What is a key characteristic of fake news?;3;Focus on intent and deception.;Based on verified facts;Clearly labeled satire;Intentionally misleading;Published by government sources
+Which of the following helps identify fake news?;2;Details matter—especially the source.;Reading only the headline;Checking the URL and author;Trusting viral content;Ignoring the source
+Which platform is commonly used to spread fake news quickly?;2;Think about where information spreads fastest.;Libraries;Social media;Encyclopedias;Academic journals
+Which of these is a reliable step in verifying a news story?;2;Use trusted tools like Snopes, PolitiFact, or FactCheck.org.;Asking a friend;Checking fact-checking websites;Looking at how many emojis are used;Relying on one source
+What should you do before sharing a news article?;3;Accuracy before virality.;Check the number of comments;Read only the first paragraph;Verify the information through multiple sources;Forward it immediately
+Which of these is a common tactic used in fake news?;3;Extreme language grabs attention.;Neutral language;Balanced viewpoints;Sensational headlines;Citing multiple sources
+A story that seems too outrageous to be true might be:;3;If it feels unbelievable, double-check it.;Definitely true;Reliable news;Fake news or satire;Verified fact
+Which of the following is NOT a red flag for fake news?;3;Reliable sources add credibility, not suspicion.;Anonymous authors;Outdated publication date;Multiple reliable sources cited;Clickbait titles
+What’s a sign a website might not be trustworthy?;3;Legitimate websites are usually transparent.;It ends in .edu;It features clear sourcing;It lacks an “About” page;It links to official documents
+Which group is most responsible for stopping the spread of fake news?;3;Everyone plays a role in responsible information sharing.;Only journalists;Only the government;Every individual who shares information;Only tech companies

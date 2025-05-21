@@ -1,1 +1,10 @@
-question;true;tip
+Fake news is always created with malicious intent;False;Consider whether all misinformation is deliberate or if it can happen unintentionally.
+A headline can be misleading even if the article content is accurate;True;Think about the difference between headlines and the full story.
+Fake news can influence real-world behavior and decisions;True;Reflect on past events where misinformation had real consequences.
+If a story has a lot of shares or likes, it must be true;False;Popularity doesn't always equal credibility.
+Satirical websites like The Onion are considered fake news;False;Differentiate between parody and intentionally deceptive content.
+You should always check the publication date of an article before sharing it;True;Outdated news can be misleading in a new context.
+Fake news is only found on social media;False;Think about all the places people consume information.
+Verified social media accounts always post true information;False;"Verified" means real identity, not factual accuracy.
+Emotional headlines are a common tactic used in fake news;True;Strong emotional language often aims to provoke, not inform.
+Cross-referencing with reputable news sources can help detect fake news;True;Think about the value of multiple trusted sources agreeing on a topic.
