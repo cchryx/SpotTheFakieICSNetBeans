@@ -27,4 +27,13 @@ public class MultipleChoice extends Question {
     public boolean checkAnswer(int choice) {
         return answer == choice;
     }
+    
+    public int getAnswer() {
+        return answer;
+    }
+
+    public String[] getChoices() {
+        return choices;
+    }
+
 }

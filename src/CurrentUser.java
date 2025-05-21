@@ -15,7 +15,7 @@ public class CurrentUser extends Account {
     public CurrentUser(
             String username, 
             String password, 
-            ArrayList<Question> questionsAnswered,
+            String[] questionsAnswered,
             int questionsCorrect,
             int questionsWrong,
             int elo

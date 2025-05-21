@@ -9,7 +9,6 @@
  */
 public class TrueFalse extends Question {
     private boolean answer;
-    private String[] choices = new String[4];
     
     public TrueFalse(
             String question, 
@@ -25,5 +24,9 @@ public class TrueFalse extends Question {
     
     public boolean checkAnswer(boolean choice) {
         return answer == choice;
+    }
+    
+    public boolean getAnswer() {
+        return answer;
     }
 }

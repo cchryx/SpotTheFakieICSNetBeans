@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Account {
     private String username;
     private String password;
-    private ArrayList<Question> questionsAnswered;
+    private String[] questionsAnswered;
     private int questionsCorrect;
     private int questionsWrong;
     private int elo;
@@ -24,9 +24,9 @@ public class Account {
     }
     
     public Account(
-            String username, 
-            String password, 
-            ArrayList<Question> questionsAnswered,
+            String username,
+            String password,
+            String[] questionsAnswered,
             int questionsCorrect,
             int questionsWrong,
             int elo
