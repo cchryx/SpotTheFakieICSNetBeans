@@ -18,7 +18,7 @@ public class NewJFrame extends javax.swing.JFrame {
     ArrayList<Account> accounts = new ArrayList<>();
     ArrayList<Question> questions = new ArrayList<>();
     
-    CurrentUser account;
+    CurrentUser curr_acc;
 
     /**
      * Creates new form NewJFrame
@@ -27,24 +27,6 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         objectifyUsers();
         objectifyQuestions();
-        
-        for (Question q : questions) {
-            System.out.println("ID: " + q.getId());
-            System.out.println("Question: " + q.getQuestion());
-
-            if (q instanceof TrueFalse tf) {
-                System.out.println("Answer: " + (tf.getAnswer() ? "True" : "False"));
-                System.out.println("Choices: True, False");
-            } else if (q instanceof MultipleChoice mc) {
-                System.out.println("Answer index: " + mc.getAnswer());
-                System.out.println("Choices:");
-                String[] choices = mc.getChoices();
-                for (int i = 0; i < choices.length; i++) {
-                    System.out.println("  " + i + ": " + choices[i]);
-                }
-            }
-            System.out.println("-----");
-        }
     }
 
     /**
@@ -116,6 +98,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4.setText("LOGIN/SIGNIN");
 
         signup_btn.setText("SIGNUP");
+        signup_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signup_btnActionPerformed(evt);
+            }
+        });
 
         login_btn.setText("LOGIN");
         login_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -356,7 +343,21 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_password_inActionPerformed
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
+        Account a = findAccountByUsername(username_in.getText().trim());
         
+        if (a != null) {
+            if (a.getPassword().equals(password_in.getText())) {
+                // Username and password are correct
+                System.out.println("Login successful!");
+                // Do something (e.g., open dashboard)
+            } else {
+                // Password is incorrect
+                System.out.println("Incorrect password.");
+            }
+        } else {
+            // Username not found
+            System.out.println("User not found.");
+        }
     }//GEN-LAST:event_login_btnActionPerformed
 
     private void signout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signout_btnActionPerformed
@@ -367,9 +368,28 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_username_inActionPerformed
 
+    private void signup_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_btnActionPerformed
+        String username = username_in.getText().trim();
+        String password = password_in.getText();
+        
+        Account a = findAccountByUsername(username);
+        
+        if (a == null) {
+            Account account = new Account(
+                username, password
+            );
+            
+            accounts.add(account);
+            account.addToDatabase();
+        } else {
+            // Username already exists
+            System.out.println("User already exists.");
+        }
+    }//GEN-LAST:event_signup_btnActionPerformed
+
     public void objectifyUsers() {
         try {
-            Scanner accountFile = new Scanner(new File("usersData.txt.txt"));
+            Scanner accountFile = new Scanner(new File("usersData.txt"));
 
             while (accountFile.hasNextLine()) {
                 String line = accountFile.nextLine();
@@ -461,7 +481,15 @@ public class NewJFrame extends javax.swing.JFrame {
             System.out.println("Question file not found: " + e.getMessage());
         }
     }
-
+    
+    public Account findAccountByUsername(String username) {
+        for (Account account : accounts) {
+            if (account.getUsername().equals(username)) {
+                return account;
+            }
+        }
+        return null;
+    }
             
     /**
      * @param args the command line arguments

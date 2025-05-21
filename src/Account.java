@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
@@ -20,6 +20,8 @@ public class Account {
     public Account(String username, String password){
         this.username = username;
         this.password = password;
+        questionsCorrect = 0;
+        questionsWrong = 0;
         elo = 0;
     }
     
@@ -64,6 +66,34 @@ public class Account {
     
     public int getQuestionsWrong(){
         return questionsWrong;
+    }
+    
+    public void addToDatabase() {
+        // Append to users.txt (no header)
+        try {
+            FileWriter userFileWriter = new FileWriter("usersData.txt", true);
+            PrintWriter userPrintWriter = new PrintWriter(userFileWriter);
+
+            userPrintWriter.println(username + ";" + password + ";" + questionsCorrect + ";" + questionsWrong + ";" + elo);
+
+            userPrintWriter.close(); // Closes both PrintWriter and FileWriter
+            System.out.println("Account added to users.txt.");
+        } catch (IOException e) {
+            System.out.println("Error writing to users.txt: " + e.getMessage());
+        }
+
+        // Append to questionsAnswered.txt (just username;)
+        try {
+            FileWriter qaFileWriter = new FileWriter("questionsAnswered.txt", true);
+            PrintWriter qaPrintWriter = new PrintWriter(qaFileWriter);
+
+            qaPrintWriter.println(username + ";");
+
+            qaPrintWriter.close();
+            System.out.println("Username added to questionsAnswered.txt.");
+        } catch (IOException e) {
+            System.out.println("Error writing to questionsAnswered.txt: " + e.getMessage());
+        }
     }
     
     @Override
