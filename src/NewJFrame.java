@@ -411,11 +411,6 @@ public class NewJFrame extends javax.swing.JFrame {
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
         }
-
-        // Verify
-        for (Account acc : accounts) {
-            System.out.println(acc);
-        }
     }
     
     public void objectifyQuestions() {
@@ -428,15 +423,13 @@ public class NewJFrame extends javax.swing.JFrame {
             while (tfFile.hasNextLine()) {
                 String line = tfFile.nextLine();
                 String[] parts = line.split(";");
-                if (parts.length == 2) {
+                if (parts.length == 3) {
                     String question = parts[0];
+                    String tip = parts[2];
                     boolean answer = Boolean.parseBoolean(parts[1]);
                     String id = "TF" + tfCounter++;
 
-                    // Optional: store choices if needed (e.g., "True", "False")
-                    String[] choices = {"True", "False", "", ""};
-
-                    Question q = new TrueFalse(question, id, answer, choices, 10, 5);
+                    Question q = new TrueFalse(question, tip, id, answer, 10, 5);
                     questions.add(q);
                 } else {
                     System.out.println("Invalid true/false line: " + line);
@@ -449,13 +442,14 @@ public class NewJFrame extends javax.swing.JFrame {
             while (mcFile.hasNextLine()) {
                 String line = mcFile.nextLine();
                 String[] parts = line.split(";");
-                if (parts.length == 6) {
+                if (parts.length == 7) {
                     String question = parts[0];
+                    String tip = parts[2];
                     int answer = Integer.parseInt(parts[1]); // index 0-3
-                    String[] choices = {parts[2], parts[3], parts[4], parts[5]};
+                    String[] choices = {parts[3], parts[4], parts[5], parts[6]};
                     String id = "MC" + mcCounter++;
 
-                    Question q = new MultipleChoice(question, id, answer, choices, 15, 7);
+                    Question q = new MultipleChoice(question, tip, id, answer, choices, 15, 7);
                     questions.add(q);
                 } else {
                     System.out.println("Invalid multiple choice line: " + line);

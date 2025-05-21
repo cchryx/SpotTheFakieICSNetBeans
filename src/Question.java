@@ -10,12 +10,14 @@
 
 public class Question {
     private String question;
+    private String tip;
     private String id;
     private int eloGain;
     private int eloLose;
     
-    public Question(String question, String id, int eloGain, int eloLose){
+    public Question(String question, String tip, String id, int eloGain, int eloLose){
         this.question = question;
+        this.tip = tip;
         this.id = id;
         this.eloGain = eloGain;
         this.eloLose = eloLose;

@@ -13,13 +13,14 @@ public class MultipleChoice extends Question {
     
     public MultipleChoice(
             String question, 
+            String tip,
             String id, 
             int answer, 
             String[] choices, 
             int eloGain, 
             int eloLose
     ){
-        super(question, id, eloGain, eloLose);
+        super(question, tip, id, eloGain, eloLose);
         this.answer = answer;
         this.choices = choices;
     }

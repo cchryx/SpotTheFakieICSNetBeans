@@ -12,13 +12,13 @@ public class TrueFalse extends Question {
     
     public TrueFalse(
             String question, 
+            String tip,
             String id, 
             boolean answer, 
-            String[] choices, 
             int eloGain, 
             int eloLose
     ){
-        super(question, id, eloGain, eloLose);
+        super(question, tip, id, eloGain, eloLose);
         this.answer = answer;
     }
     
