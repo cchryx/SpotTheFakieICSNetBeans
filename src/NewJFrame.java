@@ -47,18 +47,18 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         signup_btn = new javax.swing.JButton();
         login_btn = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        error_lab = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        l1 = new javax.swing.JLabel();
+        ada = new javax.swing.JLabel();
+        sda = new javax.swing.JLabel();
         signout_btn = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        username_lab = new javax.swing.JLabel();
+        qCorrect_lab = new javax.swing.JLabel();
+        qWrong_lab = new javax.swing.JLabel();
+        elo_lab = new javax.swing.JLabel();
         main_nav = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -111,8 +111,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("[NO ERRORS]");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -128,7 +126,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                         .addComponent(username_in))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(error_lab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(signup_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
@@ -155,7 +153,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(signup_btn)
                     .addComponent(login_btn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
+                .addComponent(error_lab)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -167,14 +165,14 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Username:");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setText("Questions Correct:");
+        l1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        l1.setText("Questions Correct:");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setText("Questions Wrong:");
+        ada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ada.setText("Questions Wrong:");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setText("ELO:");
+        sda.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        sda.setText("ELO:");
 
         signout_btn.setText("SIGNOUT");
         signout_btn.setEnabled(false);
@@ -184,13 +182,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setText("[NULL]");
+        username_lab.setText("[NULL]");
 
-        jLabel12.setText("[NULL]");
+        qCorrect_lab.setText("[NULL]");
 
-        jLabel13.setText("[NULL]");
+        qWrong_lab.setText("[NULL]");
 
-        jLabel14.setText("[NULL]");
+        elo_lab.setText("[NULL]");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -209,19 +207,19 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11))
+                                .addComponent(username_lab))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
+                                .addComponent(sda)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel14))
+                                .addComponent(elo_lab))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addComponent(ada)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13))
+                                .addComponent(qWrong_lab))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                                .addComponent(l1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12)))
+                                .addComponent(qCorrect_lab)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -232,19 +230,19 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel11))
+                    .addComponent(username_lab))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel12))
+                    .addComponent(l1)
+                    .addComponent(qCorrect_lab))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel13))
+                    .addComponent(ada)
+                    .addComponent(qWrong_lab))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel14))
+                    .addComponent(sda)
+                    .addComponent(elo_lab))
                 .addGap(18, 18, 18)
                 .addComponent(signout_btn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -343,20 +341,20 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_password_inActionPerformed
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
-        Account a = findAccountByUsername(username_in.getText().trim());
+        Account account = findAccountByUsername(username_in.getText().trim());
         
-        if (a != null) {
-            if (a.getPassword().equals(password_in.getText())) {
+        if (account != null) {
+            if (account.getPassword().equals(password_in.getText())) {
                 // Username and password are correct
-                System.out.println("Login successful!");
-                // Do something (e.g., open dashboard)
+                setOnbError("Logged in successful.");
+                loginActions(account);
             } else {
                 // Password is incorrect
-                System.out.println("Incorrect password.");
+                setOnbError("Incorrect password.");
             }
         } else {
             // Username not found
-            System.out.println("User not found.");
+            setOnbError("User not found.");
         }
     }//GEN-LAST:event_login_btnActionPerformed
 
@@ -372,19 +370,27 @@ public class NewJFrame extends javax.swing.JFrame {
         String username = username_in.getText().trim();
         String password = password_in.getText();
         
-        Account a = findAccountByUsername(username);
-        
-        if (a == null) {
-            Account account = new Account(
-                username, password
-            );
-            
-            accounts.add(account);
-            account.addToDatabase();
+        if(username.isEmpty() || password.trim().isEmpty()) {
+            setOnbError("Username and password cannot be empty.");
         } else {
-            // Username already exists
-            System.out.println("User already exists.");
+            Account a = findAccountByUsername(username);
+        
+            if (a == null) {
+                Account account = new Account(
+                    username, password
+                );
+
+                accounts.add(account);
+                account.addToDatabase();
+                
+                loginActions(account);
+            } else {
+                // Username already exists
+                setOnbError("User already exists.");
+            }
         }
+        
+        
     }//GEN-LAST:event_signup_btnActionPerformed
 
     public void objectifyUsers() {
@@ -490,7 +496,47 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         return null;
     }
-            
+    
+    public void clearOnbError() {
+        error_lab.setText(null);
+    }   
+    
+    public void setOnbError(String error) {
+        error_lab.setText(error);
+    }  
+    
+    public void loginActions(Account account) {
+        // Set the current account
+        curr_acc = new CurrentUser(
+                account.getUsername(),
+                account.getPassword(),
+                account.getQuestionsAnswered(),
+                account.getQuestionsCorrect(),
+                account.getQuestionsWrong(),
+                account.getELO()
+        );
+        
+        // Clear input fields and lock login and sign up
+        username_in.setText(null);
+        username_in.setEditable(false);
+        username_in.setEnabled(false);
+        password_in.setText(null);
+        password_in.setEditable(false);
+        password_in.setEnabled(false);
+        login_btn.setEnabled(false);
+        signup_btn.setEnabled(false);
+        
+        // Unlock main app UI
+        signout_btn.setEnabled(true);
+        main_nav.setEnabled(true);
+        
+        // Set current user stats
+        username_lab.setText(curr_acc.getUsername());
+        qCorrect_lab.setText(Integer.toString(curr_acc.getQuestionsCorrect()));
+        qWrong_lab.setText(Integer.toString(curr_acc.getQuestionsWrong()));
+        elo_lab.setText(Integer.toString(curr_acc.getELO()));
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -527,20 +573,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ada;
+    private javax.swing.JLabel elo_lab;
+    private javax.swing.JLabel error_lab;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -552,11 +593,16 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JLabel l1;
     private javax.swing.JButton login_btn;
     private javax.swing.JTabbedPane main_nav;
     private javax.swing.JTextField password_in;
+    private javax.swing.JLabel qCorrect_lab;
+    private javax.swing.JLabel qWrong_lab;
+    private javax.swing.JLabel sda;
     private javax.swing.JButton signout_btn;
     private javax.swing.JButton signup_btn;
     private javax.swing.JTextField username_in;
+    private javax.swing.JLabel username_lab;
     // End of variables declaration//GEN-END:variables
 }

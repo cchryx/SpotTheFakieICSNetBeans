@@ -68,6 +68,14 @@ public class Account {
         return questionsWrong;
     }
     
+    public String[] getQuestionsAnswered(){
+        return questionsAnswered;
+    }
+    
+    public int getELO(){
+        return elo;
+    }
+    
     public void addToDatabase() {
         // Append to users.txt (no header)
         try {
