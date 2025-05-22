@@ -359,7 +359,24 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_login_btnActionPerformed
 
     private void signout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signout_btnActionPerformed
-        // TODO add your handling code here:
+            // Clear input fields and unlock login and sign up
+        username_in.setEditable(true);
+        username_in.setEnabled(true);
+        password_in.setText(null);
+        password_in.setEditable(true);
+        password_in.setEnabled(true);
+        login_btn.setEnabled(true);
+        signup_btn.setEnabled(true);
+        
+        // lock main app UI
+        signout_btn.setEnabled(false);
+        main_nav.setEnabled(false);  
+        username_lab.setText(null);
+        qCorrect_lab.setText(null);
+        qWrong_lab.setText(null);
+        elo_lab.setText(null);
+        setOnbError("Logged out successfully."); //status message
+        
     }//GEN-LAST:event_signout_btnActionPerformed
 
     private void username_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username_inActionPerformed
