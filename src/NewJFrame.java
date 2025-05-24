@@ -62,7 +62,23 @@ public class NewJFrame extends javax.swing.JFrame {
         main_nav = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        welcome_dis = new javax.swing.JTextPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        question_dis = new javax.swing.JTextPane();
+        questionType_lab = new javax.swing.JLabel();
+        nextQuestion_btn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        true_btn = new javax.swing.JButton();
+        false_btn = new javax.swing.JButton();
+        s1 = new javax.swing.JButton();
+        s2 = new javax.swing.JButton();
+        s3 = new javax.swing.JButton();
+        s4 = new javax.swing.JButton();
+        s1_dis = new javax.swing.JScrollPane();
+        s2_dis = new javax.swing.JScrollPane();
+        s3_dis = new javax.swing.JScrollPane();
+        s4_dis = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane3 = new javax.swing.JTextPane();
@@ -250,7 +266,63 @@ public class NewJFrame extends javax.swing.JFrame {
 
         main_nav.setEnabled(false);
 
-        jScrollPane2.setViewportView(jTextPane2);
+        welcome_dis.setEditable(false);
+        welcome_dis.setText("Welcome to Spot the Fake! ");
+        welcome_dis.setFocusable(false);
+        jScrollPane2.setViewportView(welcome_dis);
+
+        question_dis.setEditable(false);
+        question_dis.setFocusable(false);
+        jScrollPane5.setViewportView(question_dis);
+
+        questionType_lab.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        questionType_lab.setText("[QUESTION TYPE]");
+
+        nextQuestion_btn.setText("Next Question");
+        nextQuestion_btn.setEnabled(false);
+        nextQuestion_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextQuestion_btnActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("ELO Change:");
+
+        jLabel8.setText("0");
+
+        true_btn.setText("True");
+        true_btn.setEnabled(false);
+        true_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                true_btnActionPerformed(evt);
+            }
+        });
+
+        false_btn.setText("False");
+        false_btn.setEnabled(false);
+        false_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                false_btnActionPerformed(evt);
+            }
+        });
+
+        s1.setText("Select 1");
+        s1.setToolTipText("");
+        s1.setEnabled(false);
+        s1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s1ActionPerformed(evt);
+            }
+        });
+
+        s2.setText("Select 2");
+        s2.setEnabled(false);
+
+        s3.setText("Select 3");
+        s3.setEnabled(false);
+
+        s4.setText("Select 4");
+        s4.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -258,15 +330,78 @@ public class NewJFrame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(s4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(s4_dis))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(s3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(s3_dis))
+                    .addComponent(questionType_lab)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nextQuestion_btn)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(true_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(false_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(s2)
+                            .addComponent(s1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(s1_dis)
+                            .addComponent(s2_dis))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(421, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(questionType_lab)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel8))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(nextQuestion_btn)
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(true_btn)
+                            .addComponent(false_btn))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(s1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                            .addComponent(s1_dis))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(s2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(s2_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(s3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(s3_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(s4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(s4_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         main_nav.addTab("Question", jPanel3);
@@ -280,7 +415,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +436,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,7 +497,7 @@ public class NewJFrame extends javax.swing.JFrame {
     
     
     private void signout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signout_btnActionPerformed
-            // Clear input fields and unlock login and sign up
+        // Clear input fields and unlock login and sign up
         username_in.setEditable(true);
         username_in.setEnabled(true);
         password_in.setText(null);
@@ -413,9 +548,25 @@ public class NewJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_signup_btnActionPerformed
 
+    private void nextQuestion_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQuestion_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nextQuestion_btnActionPerformed
+
+    private void true_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_true_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_true_btnActionPerformed
+
+    private void false_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_false_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_false_btnActionPerformed
+
+    private void s1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s1ActionPerformed
+
     public void objectifyUsers() {
-// Reads user data from "usersData.txt" and question history from "questionsAnswered.txt"
-// creates Account object and adds them to the accounts list
+    // Reads user data from "usersData.txt" and question history from "questionsAnswered.txt"
+    // creates Account object and adds them to the accounts list
         try {
             Scanner accountFile = new Scanner(new File("usersData.txt"));
 
@@ -557,8 +708,12 @@ public class NewJFrame extends javax.swing.JFrame {
         qCorrect_lab.setText(Integer.toString(curr_acc.getQuestionsCorrect()));
         qWrong_lab.setText(Integer.toString(curr_acc.getQuestionsWrong()));
         elo_lab.setText(Integer.toString(curr_acc.getELO()));
+        
+        // Generate a question
+        curr_acc.genQuestion(questions);
+        welcome_dis.setText(curr_acc.getQuestion().getQuestion());
     }
-    
+       
     /**
      * @param args the command line arguments
      */
@@ -598,33 +753,52 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel ada;
     private javax.swing.JLabel elo_lab;
     private javax.swing.JLabel error_lab;
+    private javax.swing.JButton false_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane4;
     private javax.swing.JLabel l1;
     private javax.swing.JButton login_btn;
     private javax.swing.JTabbedPane main_nav;
+    private javax.swing.JButton nextQuestion_btn;
     private javax.swing.JTextField password_in;
     private javax.swing.JLabel qCorrect_lab;
     private javax.swing.JLabel qWrong_lab;
+    private javax.swing.JLabel questionType_lab;
+    private javax.swing.JTextPane question_dis;
+    private javax.swing.JButton s1;
+    private javax.swing.JScrollPane s1_dis;
+    private javax.swing.JButton s2;
+    private javax.swing.JScrollPane s2_dis;
+    private javax.swing.JButton s3;
+    private javax.swing.JScrollPane s3_dis;
+    private javax.swing.JButton s4;
+    private javax.swing.JScrollPane s4_dis;
     private javax.swing.JLabel sda;
     private javax.swing.JButton signout_btn;
     private javax.swing.JButton signup_btn;
+    private javax.swing.JButton true_btn;
     private javax.swing.JTextField username_in;
     private javax.swing.JLabel username_lab;
+    private javax.swing.JTextPane welcome_dis;
     // End of variables declaration//GEN-END:variables
 }

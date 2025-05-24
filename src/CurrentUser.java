@@ -4,8 +4,8 @@
  */
 
 import java.util.ArrayList;
-import java.io.*;
-import java.util.Scanner;
+import java.util.Random;
+
 /**
  *
  * @author chris
@@ -30,23 +30,44 @@ public class CurrentUser extends Account {
                 elo
         );      
         
-        this.genQuestion();
     }
     
     public Question getQuestion() {
         return currentQuestion;
     }
     
-    public void genQuestion() {
+    public void genQuestion(ArrayList<Question> questions) {
+        String[] answeredQuestions = this.getQuestionsAnswered();
 
-            
-            Scanner input = new Scanner("multiplechoice.txt");
-            while(input.hasNextLine()){
-                
+        // Check if all questions are answered
+        if (answeredQuestions.length >= questions.size()) {
+            currentQuestion = null;
+            return;
+        }
+
+        Random rand = new Random();
+        Question randomQuestion;
+
+        while (true) {
+            // Pick a random question
+            randomQuestion = questions.get(rand.nextInt(questions.size()));
+            String id = randomQuestion.getId();
+
+            // Check if it's already answered
+            boolean isAnswered = false;
+            for (String answeredId : answeredQuestions) {
+                if (answeredId.equals(id)) {
+                    isAnswered = true;
+                    break;
+                }
             }
-            
-           
-       
-        
+
+            // If not answered, use it
+            if (!isAnswered) {
+                break;
+            }
+        }
+
+        currentQuestion = randomQuestion;
     }
 }
