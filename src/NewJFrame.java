@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//import modules
 
 /**
  *
@@ -356,8 +356,11 @@ public class NewJFrame extends javax.swing.JFrame {
             // Username not found
             setOnbError("User not found.");
         }
+       
     }//GEN-LAST:event_login_btnActionPerformed
 
+    
+    
     private void signout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signout_btnActionPerformed
             // Clear input fields and unlock login and sign up
         username_in.setEditable(true);
@@ -387,11 +390,11 @@ public class NewJFrame extends javax.swing.JFrame {
         String username = username_in.getText().trim();
         String password = password_in.getText();
         
-        if(username.isEmpty() || password.trim().isEmpty()) {
+        if(username.isEmpty() || password.trim().isEmpty()) { //Checking for empty login fields
             setOnbError("Username and password cannot be empty.");
         } else {
             Account a = findAccountByUsername(username);
-        
+            // Finds account, if account doesn't exist in database adds account to database file
             if (a == null) {
                 Account account = new Account(
                     username, password
@@ -411,6 +414,8 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_signup_btnActionPerformed
 
     public void objectifyUsers() {
+// Reads user data from "usersData.txt" and question history from "questionsAnswered.txt"
+// creates Account object and adds them to the accounts list
         try {
             Scanner accountFile = new Scanner(new File("usersData.txt"));
 
