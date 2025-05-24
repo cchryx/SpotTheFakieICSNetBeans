@@ -15,6 +15,15 @@ public class Question {
     private int eloGain;
     private int eloLose;
     
+    /**
+     * Constructs a Question with the provided information.
+     * 
+     * @param question the text of the question
+     * @param tip a helpful tip or hint
+     * @param id a unique ID for the question
+     * @param eloGain ELO points gained if answered correctly
+     * @param eloLose ELO points lost if answered incorrectly
+     */
     public Question(String question, String tip, String id, int eloGain, int eloLose){
         this.question = question;
         this.tip = tip;
@@ -23,10 +32,20 @@ public class Question {
         this.eloLose = eloLose;
     }
     
+    /**
+     * Returns the question text.
+     * 
+     * @return the question string
+     */
     public String getQuestion(){
         return question;
     }  
     
+    /**
+     * Returns the unique identifier of the question.
+     * 
+     * @return question ID
+     */
     public String getId(){
         return id;
     }  
