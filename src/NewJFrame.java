@@ -75,10 +75,14 @@ public class NewJFrame extends javax.swing.JFrame {
         s2 = new javax.swing.JButton();
         s3 = new javax.swing.JButton();
         s4 = new javax.swing.JButton();
-        s1_dis = new javax.swing.JScrollPane();
-        s2_dis = new javax.swing.JScrollPane();
-        s3_dis = new javax.swing.JScrollPane();
-        s4_dis = new javax.swing.JScrollPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        s1_dis = new javax.swing.JTextPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        s2_dis = new javax.swing.JTextPane();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        s3_dis = new javax.swing.JTextPane();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        s4_dis = new javax.swing.JTextPane();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane3 = new javax.swing.JTextPane();
@@ -324,28 +328,38 @@ public class NewJFrame extends javax.swing.JFrame {
         s4.setText("Select 4");
         s4.setEnabled(false);
 
+        s1_dis.setEditable(false);
+        s1_dis.setFocusable(false);
+        jScrollPane6.setViewportView(s1_dis);
+
+        s2_dis.setEditable(false);
+        s2_dis.setFocusable(false);
+        jScrollPane7.setViewportView(s2_dis);
+
+        s3_dis.setEditable(false);
+        s3_dis.setFocusable(false);
+        jScrollPane8.setViewportView(s3_dis);
+
+        s4_dis.setEditable(false);
+        s4_dis.setFocusable(false);
+        jScrollPane9.setViewportView(s4_dis);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(s4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(s4_dis))
+                        .addComponent(jScrollPane9))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(s3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(s3_dis))
+                        .addComponent(jScrollPane8))
                     .addComponent(questionType_lab)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nextQuestion_btn)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(true_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -353,55 +367,62 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(false_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(false_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                                .addComponent(nextQuestion_btn))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(s2)
                             .addComponent(s1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(s1_dis)
-                            .addComponent(s2_dis))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                            .addComponent(jScrollPane6)
+                            .addComponent(jScrollPane7)))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(questionType_lab)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel8))
-                .addGap(8, 8, 8)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(nextQuestion_btn)
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(true_btn)
-                            .addComponent(false_btn))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(s1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                            .addComponent(s1_dis))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(s2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(s2_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(questionType_lab)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel8)
+                                    .addComponent(nextQuestion_btn))
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(true_btn)
+                                    .addComponent(false_btn))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(s1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(s2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)
                         .addComponent(s3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(s3_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(s4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(s4_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         main_nav.addTab("Question", jPanel3);
@@ -711,7 +732,57 @@ public class NewJFrame extends javax.swing.JFrame {
         
         // Generate a question
         curr_acc.genQuestion(questions);
-        welcome_dis.setText(curr_acc.getQuestion().getQuestion());
+        
+        // Display and set up question
+        setQuestion();
+        
+
+    }
+    
+    public void setQuestion() {
+        Question current_q = curr_acc.getQuestion();
+        // Set the question type
+        if(current_q instanceof TrueFalse) {
+            questionType_lab.setText("True or False?");
+            
+            // Open selection for true false
+            toggleTF_s(true);
+        } else if(current_q instanceof MultipleChoice) {
+            String[] choices = ((MultipleChoice) current_q).getChoices();
+            questionType_lab.setText("Multiple Choice");
+            
+            // Open selection for multiple choice
+            toggleMC_s(true);
+            
+            // Set the selections
+            s1_dis.setText(choices[0]);
+            s2_dis.setText(choices[1]);
+            s3_dis.setText(choices[2]);
+            s4_dis.setText(choices[3]);
+        }
+        
+        // Set question text
+        question_dis.setText(current_q.getQuestion());
+    }
+    
+    public void toggleMC_s(boolean state) {
+        s1.setEnabled(state);
+        s2.setEnabled(state);
+        s3.setEnabled(state);
+        s4.setEnabled(state);
+        
+        if(state == false) {
+            // Empty all the displays for selection
+            s1_dis.setText(null);
+            s2_dis.setText(null);
+            s3_dis.setText(null);
+            s4_dis.setText(null);
+        }
+    }
+    
+    public void toggleTF_s(boolean state) {
+        true_btn.setEnabled(state);
+        false_btn.setEnabled(state);
     }
        
     /**
@@ -767,13 +838,14 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane4;
     private javax.swing.JLabel l1;
@@ -786,13 +858,13 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel questionType_lab;
     private javax.swing.JTextPane question_dis;
     private javax.swing.JButton s1;
-    private javax.swing.JScrollPane s1_dis;
+    private javax.swing.JTextPane s1_dis;
     private javax.swing.JButton s2;
-    private javax.swing.JScrollPane s2_dis;
+    private javax.swing.JTextPane s2_dis;
     private javax.swing.JButton s3;
-    private javax.swing.JScrollPane s3_dis;
+    private javax.swing.JTextPane s3_dis;
     private javax.swing.JButton s4;
-    private javax.swing.JScrollPane s4_dis;
+    private javax.swing.JTextPane s4_dis;
     private javax.swing.JLabel sda;
     private javax.swing.JButton signout_btn;
     private javax.swing.JButton signup_btn;
