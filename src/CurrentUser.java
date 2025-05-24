@@ -4,7 +4,8 @@
  */
 
 import java.util.ArrayList;
-
+import java.io.*;
+import java.util.Scanner;
 /**
  *
  * @author chris
@@ -37,6 +38,15 @@ public class CurrentUser extends Account {
     }
     
     public void genQuestion() {
+
+            
+            Scanner input = new Scanner("multiplechoice.txt");
+            while(input.hasNextLine()){
+                
+            }
+            
+           
+       
         
     }
 }
