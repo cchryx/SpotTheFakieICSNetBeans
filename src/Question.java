@@ -14,6 +14,7 @@ public class Question {
     private String id;
     private int eloGain;
     private int eloLose;
+    private static int total_questions = 0;
     
     /**
      * Constructs a Question with the provided information.
@@ -30,6 +31,8 @@ public class Question {
         this.id = id;
         this.eloGain = eloGain;
         this.eloLose = eloLose;
+        
+        total_questions++;
     }
     
     /**
@@ -75,5 +78,14 @@ public class Question {
      */
     public String getId(){
         return id;
+    }  
+    
+    /**
+     * Returns the total number of questions
+     * 
+     * @return total number of question
+     */
+    public static int getTotalQuestions(){
+        return total_questions;
     }  
 }
