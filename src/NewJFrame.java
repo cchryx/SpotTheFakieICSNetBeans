@@ -790,10 +790,10 @@ public class NewJFrame extends javax.swing.JFrame {
         
         if(isCorrect) {
             // Display correct with tips
-            question_dis.setText("You are correct! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+            question_dis.setText("You are correct! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
         } else {
              // Display incorrect with tips
-            question_dis.setText("You are incorrect! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+            question_dis.setText("You are incorrect! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
         }
     }
     
@@ -806,10 +806,10 @@ public class NewJFrame extends javax.swing.JFrame {
         
         if(isCorrect) {
             // Display correct with tips
-            question_dis.setText("You are correct! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+            question_dis.setText("You are correct! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
         } else {
              // Display incorrect with tips
-            question_dis.setText("You are incorrect! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+            question_dis.setText("You are incorrect! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
         }
     }
        
