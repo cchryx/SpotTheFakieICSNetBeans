@@ -367,7 +367,7 @@
                                       <Component id="false_btn" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="745" max="32767" attributes="0"/>
+                                      <EmptySpace pref="257" max="32767" attributes="0"/>
                                       <Component id="nextQuestion_btn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -384,9 +384,9 @@
                               </Group>
                           </Group>
                           <Component id="jScrollPane5" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jScrollPane2" alignment="0" min="-2" pref="608" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" min="-2" pref="441" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -450,7 +450,7 @@
                 <Component class="javax.swing.JTextPane" name="welcome_dis">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="Welcome to Spot the Fakie! In this game you gain points based on true/false and multiple choice. It&apos;s okay if you get it wrong though you get a free tip. Good luck"/>
+                    <Property name="text" type="java.lang.String" value="Welcome to Spot the Fakie! Answer the question based on multiple choice or true/false. Good luck "/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
