@@ -265,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
         main_nav.setEnabled(false);
 
         welcome_dis.setEditable(false);
-        welcome_dis.setText("Welcome to Spot the Fake! ");
+        welcome_dis.setText("Welcome to Spot the Fakie! ");
         welcome_dis.setFocusable(false);
         jScrollPane2.setViewportView(welcome_dis);
 
