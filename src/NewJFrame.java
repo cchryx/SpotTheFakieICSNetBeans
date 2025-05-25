@@ -265,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
         main_nav.setEnabled(false);
 
         welcome_dis.setEditable(false);
-        welcome_dis.setText("Welcome to Spot the Fakie! Answer the question based on multiple choice or true/false. Good luck ");
+        welcome_dis.setText("Welcome to Spot the Fakie! ");
         welcome_dis.setFocusable(false);
         jScrollPane2.setViewportView(welcome_dis);
 
@@ -392,19 +392,19 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(jScrollPane6)
                             .addComponent(jScrollPane7)))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(questionType_lab)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -806,7 +806,7 @@ public class NewJFrame extends javax.swing.JFrame {
     
     public void handleUserAnswer(int answer) {
         // Lock selections 
-        toggleMC_s(false); 
+        toggleMC_s(false);
         
         MultipleChoice current_q = (MultipleChoice) curr_acc.getQuestion();
         boolean isCorrect = current_q.checkAnswer(answer);
