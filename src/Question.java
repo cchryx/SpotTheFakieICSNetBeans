@@ -42,6 +42,15 @@ public class Question {
     }  
     
     /**
+     * Returns the question tip.
+     * 
+     * @return the question tip string
+     */
+    public String getTip(){
+        return tip;
+    }  
+    
+    /**
      * Returns the unique identifier of the question.
      * 
      * @return question ID

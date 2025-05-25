@@ -83,12 +83,6 @@ public class NewJFrame extends javax.swing.JFrame {
         s3_dis = new javax.swing.JTextPane();
         jScrollPane9 = new javax.swing.JScrollPane();
         s4_dis = new javax.swing.JTextPane();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -321,12 +315,27 @@ public class NewJFrame extends javax.swing.JFrame {
 
         s2.setText("Select 2");
         s2.setEnabled(false);
+        s2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s2ActionPerformed(evt);
+            }
+        });
 
         s3.setText("Select 3");
         s3.setEnabled(false);
+        s3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s3ActionPerformed(evt);
+            }
+        });
 
         s4.setText("Select 4");
         s4.setEnabled(false);
+        s4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s4ActionPerformed(evt);
+            }
+        });
 
         s1_dis.setEditable(false);
         s1_dis.setFocusable(false);
@@ -426,48 +435,6 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         main_nav.addTab("Question", jPanel3);
-
-        jScrollPane3.setViewportView(jTextPane3);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(380, Short.MAX_VALUE))
-        );
-
-        main_nav.addTab("Leaderboard", jPanel4);
-
-        jScrollPane4.setViewportView(jTextPane4);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(378, Short.MAX_VALUE))
-        );
-
-        main_nav.addTab("Add Question", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -572,21 +539,33 @@ public class NewJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_signup_btnActionPerformed
 
+    private void s1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s1ActionPerformed
+        handleUserAnswer(1);
+    }//GEN-LAST:event_s1ActionPerformed
+
+    private void false_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_false_btnActionPerformed
+        handleUserAnswer(false);
+    }//GEN-LAST:event_false_btnActionPerformed
+
+    private void true_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_true_btnActionPerformed
+        handleUserAnswer(true);
+    }//GEN-LAST:event_true_btnActionPerformed
+
     private void nextQuestion_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQuestion_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nextQuestion_btnActionPerformed
 
-    private void true_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_true_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_true_btnActionPerformed
+    private void s2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2ActionPerformed
+        handleUserAnswer(2);
+    }//GEN-LAST:event_s2ActionPerformed
 
-    private void false_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_false_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_false_btnActionPerformed
+    private void s3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s3ActionPerformed
+        handleUserAnswer(3);
+    }//GEN-LAST:event_s3ActionPerformed
 
-    private void s1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_s1ActionPerformed
+    private void s4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s4ActionPerformed
+        handleUserAnswer(4);
+    }//GEN-LAST:event_s4ActionPerformed
 
     public void objectifyUsers() {
     // Reads user data from "usersData.txt" and question history from "questionsAnswered.txt"
@@ -801,6 +780,38 @@ public class NewJFrame extends javax.swing.JFrame {
         true_btn.setEnabled(state);
         false_btn.setEnabled(state);
     }
+    
+    public void handleUserAnswer(boolean answer) {
+        // Lock selections 
+        toggleTF_s(false);
+        
+        TrueFalse current_q = (TrueFalse) curr_acc.getQuestion();
+        boolean isCorrect = current_q.checkAnswer(answer);
+        
+        if(isCorrect) {
+            // Display correct with tips
+            question_dis.setText("You are correct! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+        } else {
+             // Display incorrect with tips
+            question_dis.setText("You are incorrect! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+        }
+    }
+    
+    public void handleUserAnswer(int answer) {
+        // Lock selections 
+        toggleMC_s(false);
+        
+        MultipleChoice current_q = (MultipleChoice) curr_acc.getQuestion();
+        boolean isCorrect = current_q.checkAnswer(answer);
+        
+        if(isCorrect) {
+            // Display correct with tips
+            question_dis.setText("You are correct! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+        } else {
+             // Display incorrect with tips
+            question_dis.setText("You are incorrect! The answer was "+ answer + "\n\n TIP: " + current_q.getTip());
+        }
+    }
        
     /**
      * @param args the command line arguments
@@ -853,18 +864,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
     private javax.swing.JLabel l1;
     private javax.swing.JButton login_btn;
     private javax.swing.JTabbedPane main_nav;
