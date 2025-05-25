@@ -8,3 +8,9 @@ Fake news is only found on social media;false;Think about all the places people 
 Verified social media accounts always post true information;false;"Verified" means real identity, not factual accuracy.
 Emotional headlines are a common tactic used in fake news;true;Strong emotional language often aims to provoke, not inform.
 Cross-referencing with reputable news sources can help detect fake news;true;Think about the value of multiple trusted sources agreeing on a topic.
+NASA Confirms Earth Will Experience 15 Days of Darkness in November Due to a Planetary Alignment. Is this true/false news?;false;Scientific organizations like NASA debunked this—planetary alignments don’t cause darkness.
+Canada Introduces National Pharmacare Plan Covering All Prescription Drugs by 2026 Is this true/false news?;true;Check reliable government or national news sources to verify policy announcements.
+Drinking Coffee Cures COVID-19, According to New Study Is this true/false news?;false;Health claims should always be cross-checked with trusted medical authorities.
+Satirical News Site Posts Article Claiming Queen Elizabeth II Was an Alien in Disguise Is this true/false news?;false;Satirical content is not meant to be taken seriously—look for disclaimers or known parody sources.
+Wildfires in Alberta Lead to Evacuations and State of Emergency Declaration Is this true/false news?;true;Look for corroborating reports from major news outlets or government emergency bulletins.
+
