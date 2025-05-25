@@ -534,7 +534,10 @@ public class NewJFrame extends javax.swing.JFrame {
         qCorrect_lab.setText(null);
         qWrong_lab.setText(null);
         elo_lab.setText(null);
-        setOnbError("Logged out successfully."); //status message
+        setOnbError("Logged out successfully.");
+        
+        // Main UI reset actions
+        signoutActions();
         
     }//GEN-LAST:event_signout_btnActionPerformed
 
@@ -737,6 +740,20 @@ public class NewJFrame extends javax.swing.JFrame {
         setQuestion();
         
 
+    }
+    
+    public void signoutActions() {
+        // Toggle all 
+        toggleMC_s(false);
+        toggleTF_s(false);
+        
+        // Reset MC selections and question 
+        s1_dis.setText(null);
+        s2_dis.setText(null);
+        s3_dis.setText(null);
+        s4_dis.setText(null);
+        question_dis.setText(null);
+        questionType_lab.setText("[QUESTION TYPE]");
     }
     
     public void setQuestion() {
