@@ -116,6 +116,20 @@ public class Account {
     }
     
     /**
+     * Increase the user's wrong questions;
+     */
+    public void addQuestionsWrong(){
+        questionsWrong++;
+    }
+    
+     /**
+     * Increase the user's correct questions;
+     */
+    public void addQuestionsCorrect(){
+        questionsCorrect++;
+    }
+    
+    /**
      * Returns an array of answered question identifiers.
      * 
      * @return array of questions answered
@@ -123,6 +137,7 @@ public class Account {
     public String[] getQuestionsAnswered(){
         return questionsAnswered;
     }
+    
     
     /**
      * Returns the current ELO score.
