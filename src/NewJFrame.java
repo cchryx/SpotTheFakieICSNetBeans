@@ -265,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
         main_nav.setEnabled(false);
 
         welcome_dis.setEditable(false);
-        welcome_dis.setText("Welcome to Spot the Fakie! This app will help you ");
+        welcome_dis.setText("Welcome to Spot the Fakie! Login or signup to start!");
         welcome_dis.setFocusable(false);
         jScrollPane2.setViewportView(welcome_dis);
 
@@ -681,6 +681,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }  
     
     public void loginActions(Account account) {
+        // Set welcome and app instructions
+        String message = "Welcome to *Spot the Fakie!*\n" +
+        "This app will help you get better at spotting fake news and harmful content on the internet.\n" +
+        "You'll face two types of questions: True/False and Multiple Choice.\n\n" +
+        "Choose the correct answer to gain ELO, but be careful — you’ll lose ELO if you get them wrong!\n\n" +
+        "Good luck, and have fun!";
+        
+        welcome_dis.setText(message);
+        
         // Set the current account
         curr_acc = new CurrentUser(
                 account.getUsername(),
