@@ -75,7 +75,7 @@ public class Account {
         if((elo - points) < 0) {
             elo = 0;
         } else {
-            elo += points;
+            elo -= points;
         }
     }
     
