@@ -10,6 +10,8 @@
 public class MultipleChoice extends Question {
     private int answer;
     private String[] choices = new String[4];
+    private static final int DEFAULT_ELO_GAIN = 10;
+    private static final int DEFAULT_ELO_LOSE = 5;
     
     /**
      * Constructs a MultipleChoice question with all necessary parameters.
@@ -19,19 +21,15 @@ public class MultipleChoice extends Question {
      * @param id a unique identifier for the question
      * @param answer the index (0–3) of the correct answer
      * @param choices an array of 4 answer choices
-     * @param eloGain ELO points gained on correct answer
-     * @param eloLose ELO points lost on wrong answer
      */
     public MultipleChoice(
             String question, 
             String tip,
             String id, 
             int answer, 
-            String[] choices, 
-            int eloGain, 
-            int eloLose
+            String[] choices
     ){
-        super(question, tip, id, eloGain, eloLose);
+        super(question, tip, id, DEFAULT_ELO_GAIN, DEFAULT_ELO_LOSE);
         this.answer = answer;
         this.choices = choices;
     }

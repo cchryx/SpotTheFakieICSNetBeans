@@ -631,7 +631,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     boolean answer = Boolean.parseBoolean(parts[1]);
                     String id = "TF" + tfCounter++;
 
-                    Question q = new TrueFalse(question, tip, id, answer, 10, 5);
+                    Question q = new TrueFalse(question, tip, id, answer);
                     questions.add(q);
                 } else {
                     System.out.println("Invalid true/false line: " + line);
@@ -651,7 +651,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     String[] choices = {parts[3], parts[4], parts[5], parts[6]};
                     String id = "MC" + mcCounter++;
 
-                    Question q = new MultipleChoice(question, tip, id, answer, choices, 15, 7);
+                    Question q = new MultipleChoice(question, tip, id, answer, choices);
                     questions.add(q);
                 } else {
                     System.out.println("Invalid multiple choice line: " + line);
