@@ -68,7 +68,7 @@ public class NewJFrame extends javax.swing.JFrame {
         questionType_lab = new javax.swing.JLabel();
         nextQuestion_btn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        eloChange_lab = new javax.swing.JLabel();
         true_btn = new javax.swing.JButton();
         false_btn = new javax.swing.JButton();
         s1 = new javax.swing.JButton();
@@ -286,8 +286,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel5.setText("ELO Change:");
 
-        jLabel8.setText("0");
-
         true_btn.setText("True");
         true_btn.setEnabled(false);
         true_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +373,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)))
+                                .addComponent(eloChange_lab)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -393,7 +391,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(jScrollPane7)))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,7 +409,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel8)
+                                    .addComponent(eloChange_lab)
                                     .addComponent(nextQuestion_btn))
                                 .addGap(20, 20, 20)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -552,7 +550,8 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_true_btnActionPerformed
 
     private void nextQuestion_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQuestion_btnActionPerformed
-        // TODO add your handling code here:
+        // Display the new question by setting the question
+        setQuestion();
     }//GEN-LAST:event_nextQuestion_btnActionPerformed
 
     private void s2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2ActionPerformed
@@ -722,9 +721,11 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     public void signoutActions() {
-        // Toggle all 
+        // Toggle all false
         toggleMC_s(false);
         toggleTF_s(false);
+        nextQuestion_btn.setEnabled(false);
+        
         
         // Reset MC selections and question 
         s1_dis.setText(null);
@@ -732,11 +733,13 @@ public class NewJFrame extends javax.swing.JFrame {
         s3_dis.setText(null);
         s4_dis.setText(null);
         question_dis.setText(null);
+        eloChange_lab.setText(null);
         questionType_lab.setText("[QUESTION TYPE]");
     }
     
     public void setQuestion() {
         Question current_q = curr_acc.getQuestion();
+        
         // Set the question type
         if(current_q instanceof TrueFalse) {
             questionType_lab.setText("True or False?");
@@ -785,6 +788,9 @@ public class NewJFrame extends javax.swing.JFrame {
         // Lock selections 
         toggleTF_s(false);
         
+        // Unlock next question button
+        nextQuestion_btn.setEnabled(true);
+        
         TrueFalse current_q = (TrueFalse) curr_acc.getQuestion();
         boolean isCorrect = current_q.checkAnswer(answer);
         
@@ -794,19 +800,36 @@ public class NewJFrame extends javax.swing.JFrame {
             
             // Add elo to user
             curr_acc.addElo(curr_acc.getQuestion().getEloGain());
+            
+            // Display elo change
+            eloChange_lab.setText("+" + curr_acc.getQuestion().getEloGain());
+            
+            // Increase correct questions
+            curr_acc.addQuestionsCorrect();
         } else {
              // Display incorrect with tips
             question_dis.setText("You are incorrect! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
             
              // Remove elo from user
-            curr_acc.removeElo(curr_acc.getQuestion().getEloGain());
+            curr_acc.removeElo(curr_acc.getQuestion().getEloLose());
+            
+            // Display elo change
+            eloChange_lab.setText("-" + curr_acc.getQuestion().getEloLose());
+            
+            // Increase incorrect questions
+            curr_acc.addQuestionsWrong();
         }
+        
+        updateCurrentUser();
         
     }
     
     public void handleUserAnswer(int answer) {
         // Lock selections 
         toggleMC_s(false);
+        
+        // Unlock next question button
+        nextQuestion_btn.setEnabled(true);
         
         MultipleChoice current_q = (MultipleChoice) curr_acc.getQuestion();
         boolean isCorrect = current_q.checkAnswer(answer);
@@ -817,13 +840,38 @@ public class NewJFrame extends javax.swing.JFrame {
             
             // Add elo to user
             curr_acc.addElo(curr_acc.getQuestion().getEloGain());
+            
+            // Display elo change
+            eloChange_lab.setText("+" + curr_acc.getQuestion().getEloGain());
+            
+            // Increase correct questions
+            curr_acc.addQuestionsCorrect();
         } else {
              // Display incorrect with tips
             question_dis.setText("You are incorrect! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
             
              // Remove elo from user
-            curr_acc.removeElo(curr_acc.getQuestion().getEloGain());
+            curr_acc.removeElo(curr_acc.getQuestion().getEloLose());
+            
+            // Display elo change
+            eloChange_lab.setText("-" + curr_acc.getQuestion().getEloLose());
+            
+            // Increase incorrect questions
+            curr_acc.addQuestionsWrong();
         }
+        
+        updateCurrentUser();
+    }
+    
+    public void updateCurrentUser() {
+         // Set current user stats
+        username_lab.setText(curr_acc.getUsername());
+        qCorrect_lab.setText(Integer.toString(curr_acc.getQuestionsCorrect()));
+        qWrong_lab.setText(Integer.toString(curr_acc.getQuestionsWrong()));
+        elo_lab.setText(Integer.toString(curr_acc.getELO()));
+        
+        // Generate a new question
+        curr_acc.genQuestion(questions);
     }
        
     /**
@@ -863,6 +911,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ada;
+    private javax.swing.JLabel eloChange_lab;
     private javax.swing.JLabel elo_lab;
     private javax.swing.JLabel error_lab;
     private javax.swing.JButton false_btn;
@@ -873,7 +922,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
