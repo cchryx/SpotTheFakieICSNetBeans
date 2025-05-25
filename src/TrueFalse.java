@@ -9,6 +9,8 @@
  */
 public class TrueFalse extends Question {
     private boolean answer;
+    private static final int DEFAULT_ELO_GAIN = 5;
+    private static final int DEFAULT_ELO_LOSE = 2;
     
     /**
      * Constructs a TrueFalse question with all necessary parameters.
@@ -17,18 +19,14 @@ public class TrueFalse extends Question {
      * @param tip a helpful hint for the question
      * @param id a unique identifier for the question
      * @param answer the correct answer (true or false)
-     * @param eloGain ELO points gained for a correct answer
-     * @param eloLose ELO points lost for a wrong answer
      */
     public TrueFalse(
             String question, 
             String tip,
             String id, 
-            boolean answer, 
-            int eloGain, 
-            int eloLose
+            boolean answer
     ){
-        super(question, tip, id, eloGain, eloLose);
+        super(question, tip, id, DEFAULT_ELO_GAIN, DEFAULT_ELO_LOSE);
         this.answer = answer;
     }
     
