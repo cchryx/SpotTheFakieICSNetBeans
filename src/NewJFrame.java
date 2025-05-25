@@ -265,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
         main_nav.setEnabled(false);
 
         welcome_dis.setEditable(false);
-        welcome_dis.setText("Welcome to Spot the Fakie! In this game you gain points based on true/false and multiple choice. It's okay if you get it wrong though you get a free tip. Good luck");
+        welcome_dis.setText("Welcome to Spot the Fakie! Answer the question based on multiple choice or true/false. Good luck ");
         welcome_dis.setFocusable(false);
         jScrollPane2.setViewportView(welcome_dis);
 
@@ -381,7 +381,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(false_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 745, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
                                 .addComponent(nextQuestion_btn))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,8 +392,8 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(jScrollPane6)
                             .addComponent(jScrollPane7)))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
