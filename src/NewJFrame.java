@@ -791,10 +791,17 @@ public class NewJFrame extends javax.swing.JFrame {
         if(isCorrect) {
             // Display correct with tips
             question_dis.setText("You are correct! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
+            
+            // Add elo to user
+            curr_acc.addElo(curr_acc.getQuestion().getEloGain());
         } else {
              // Display incorrect with tips
             question_dis.setText("You are incorrect! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
+            
+             // Remove elo from user
+            curr_acc.removeElo(curr_acc.getQuestion().getEloGain());
         }
+        
     }
     
     public void handleUserAnswer(int answer) {
@@ -807,9 +814,15 @@ public class NewJFrame extends javax.swing.JFrame {
         if(isCorrect) {
             // Display correct with tips
             question_dis.setText("You are correct! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
+            
+            // Add elo to user
+            curr_acc.addElo(curr_acc.getQuestion().getEloGain());
         } else {
              // Display incorrect with tips
             question_dis.setText("You are incorrect! The answer was "+ answer + ".\n\n TIP: " + current_q.getTip());
+            
+             // Remove elo from user
+            curr_acc.removeElo(curr_acc.getQuestion().getEloGain());
         }
     }
        

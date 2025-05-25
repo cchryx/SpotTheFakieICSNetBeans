@@ -51,6 +51,24 @@ public class Question {
     }  
     
     /**
+     * Returns the elo gain.
+     * 
+     * @return the elo gain integer
+     */
+    public int getEloGain(){
+        return eloGain;
+    }  
+    
+    /**
+     * Returns the elo lose.
+     * 
+     * @return the elo lose integer
+     */
+    public int getEloLose(){
+        return eloLose;
+    }  
+    
+    /**
      * Returns the unique identifier of the question.
      * 
      * @return question ID
