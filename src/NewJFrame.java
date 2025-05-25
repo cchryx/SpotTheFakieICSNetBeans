@@ -806,7 +806,7 @@ public class NewJFrame extends javax.swing.JFrame {
     
     public void handleUserAnswer(int answer) {
         // Lock selections 
-        toggleMC_s(false);
+        toggleMC_s(false); 
         
         MultipleChoice current_q = (MultipleChoice) curr_acc.getQuestion();
         boolean isCorrect = current_q.checkAnswer(answer);
